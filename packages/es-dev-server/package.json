@@ -41,6 +41,7 @@
     "start:index-rewrite": "yarn build && node dist/cli.js --app-index demo/index-rewrite/index.html --config demo/index-rewrite/es-dev-server.config.js --node-resolve --open /",
     "start:base-path": "yarn build && node dist/cli.js --app-index demo/base-path/index.html --base-path /my-base-path --node-resolve --watch --open",
     "start:base-path-compat": "yarn build && node dist/cli.js --app-index demo/base-path/index.html --base-path /my-base-path --node-resolve --compatibility all --watch --open",
+    "start:large-files": "yarn build && node dist/cli.js --root-dir ../../ --app-index packages/es-dev-server/demo/large-files/index.html --node-resolve --open",
     "generate-certificates": "node scripts/generate-certificates.js",
     "prepublishOnly": "npm run build && ../../scripts/insert-header.js"
   },
@@ -79,6 +80,7 @@
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/register": "^7.0.0",
+    "@bundled-es-modules/pdfjs-dist": "^2.1.266-rc",
     "@types/koa": "^2.0.48",
     "@types/koa-static": "^4.0.1",
     "@types/lru-cache": "^5.1.0",
