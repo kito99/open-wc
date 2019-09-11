@@ -1,0 +1,49 @@
+<html lang="en-GB"><head>
+  <title>My app</title>
+  <style>
+    my-app {
+      display: block;
+    }
+  </style>
+<link rel="preload" href="app.js" as="script" crossorigin="anonymous"></head>
+
+<body>
+  <h1>
+    <span>
+      Hello world!
+    </span>
+  </h1>
+  <my-app></my-app>
+
+
+
+<script>
+(function() {
+
+  function loadScript(src, module) {
+    var loaded = false, thenCb, s = document.createElement('script');
+    function resolve() {
+      document.head.removeChild(s);
+      thenCb ? thenCb() : loaded = true;
+    }
+    s.src = src; s.onload = resolve; if (module) script.type = 'module';
+    s.onerror = function () {
+      console.error('[polyfills-loader] failed to load script: ' + src + ' check the network tab for HTTP status.');
+      resolve();
+    }
+    document.head.appendChild(script);
+    return { then: function (cb) { loaded ? cb() : thenCb = cb; } };
+  }
+
+  var polyfills = [];
+  if (!('noModule' in HTMLScriptElement.prototype)) { polyfills.push(loadScript('polyfills/core-js.8e88fc5b880b02431d6fad7b3a34116d.js', false)) }
+  if (!('attachShadow' in Element.prototype) || !('getRootNode' in Element.prototype)) { polyfills.push(loadScript('polyfills/webcomponents.88b4b5855ede008ecad6bbdd4a69e57d.js', false)) }
+  if (!('noModule' in HTMLScriptElement.prototype) && 'getRootNode' in Element.prototype) { polyfills.push(loadScript('polyfills/custom-elements-es5-adapter.01496319407efe7ef743b10afbb93714.js', false)) }
+
+  function loadEntries() {
+    'noModule' in HTMLScriptElement.prototype ? window.importShim('./app.js') : System.import('./legacy/app.js');
+  }
+
+  polyfills.length ? Promise.all(polyfills).then(loadEntries) : loadEntries();
+})();
+</script></body></html>

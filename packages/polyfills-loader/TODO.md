@@ -1,0 +1,9 @@
+- abort controller polyfill
+- change dynamic import feature detection
+- use dynamic import polyfill from npm
+- fix dynamic import polyfill blob bug
+- make sure all default polyfills are available, or easily installable
+- update sourcemap path
+- how to handle non-inline loader script?
+- preloaded files
+- handle scripts?

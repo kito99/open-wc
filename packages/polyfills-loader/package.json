@@ -1,0 +1,46 @@
+{
+  "name": "polyfills-loader",
+  "main": "index.js",
+  "version": "1.17.2",
+  "description": "Development server for modern web apps",
+  "author": "open-wc",
+  "homepage": "https://github.com/open-wc/open-wc/packages/polyfills-loader",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bin": {
+    "polyfills-loader": "./dist/cli.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "src"
+  ],
+  "scripts": {
+    "test": "npm run test:node",
+    "test:node": "mocha test/**/*.test.js test/*.test.js",
+    "test:watch": "mocha test/**/*.test.js test/*.test.js --watch",
+    "test:update-snapshots": "mocha test/**/*.test.js test/*.test.js --update-snapshots",
+    "prepublishOnly": "npm run build && ../../scripts/insert-header.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-wc/open-wc.git",
+    "directory": "packages/polyfills-loader"
+  },
+  "dependencies": {
+    "@open-wc/building-utils": "^2.8.1",
+    "deepmerge": "^4.0.0",
+    "html-minifier": "^4.0.0",
+    "parse5": "^5.1.0",
+    "terser": "^4.3.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}

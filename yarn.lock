@@ -1991,30 +1991,6 @@
   resolved "https://registry.yarnpkg.com/@open-wc/semantic-dom-diff/-/semantic-dom-diff-0.13.21.tgz#718b9ec5f9a98935fc775e577ad094ae8d8b7dea"
   integrity sha512-BONpjHcGX2zFa9mfnwBCLEmlDsOHzT+j6Qt1yfK3MzFXFtAykfzFjAgaxPetu0YbBlCfXuMlfxI4vlRGCGMvFg==
 
-"@open-wc/testing-karma-bs@file:./packages/testing-karma-bs":
-  version "1.1.55"
-  dependencies:
-    "@open-wc/testing-karma" "^3.1.30"
-    "@types/node" "^11.13.0"
-    karma-browserstack-launcher "^1.0.0"
-
-"@open-wc/testing-karma@file:./packages/testing-karma":
-  version "3.1.30"
-  dependencies:
-    "@open-wc/karma-esm" "^2.5.5"
-    axe-core "^3.3.1"
-    istanbul-instrumenter-loader "^3.0.0"
-    karma "^4.0.0"
-    karma-chrome-launcher "^2.0.0"
-    karma-coverage-istanbul-reporter "^2.0.0"
-    karma-mocha "^1.0.0"
-    karma-mocha-reporter "^2.0.0"
-    karma-mocha-snapshot "^0.2.1"
-    karma-snapshot "^0.6.0"
-    karma-source-map-support "^1.3.0"
-    karma-sourcemap-loader "^0.3.0"
-    mocha "^6.2.0"
-
 "@reach/router@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.2.1.tgz#34ae3541a5ac44fa7796e5506a5d7274a162be4e"
@@ -6412,7 +6388,7 @@ deep-object-diff@^1.1.0:
   resolved "https://registry.yarnpkg.com/deep-object-diff/-/deep-object-diff-1.1.0.tgz#d6fabf476c2ed1751fc94d5ca693d2ed8c18bc5a"
   integrity sha512-b+QLs5vHgS+IoSNcUE4n9HP2NwcHj7aqnJWsjPtuG75Rh5TOaGt0OjAYInh77d5T16V5cRDC+Pw/6ZZZiETBGw==
 
-deepmerge@4.0.0:
+deepmerge@4.0.0, deepmerge@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.0.0.tgz#3e3110ca29205f120d7cb064960a39c3d2087c09"
   integrity sha512-YZ1rOP5+kHor4hMAH+HRQnBQHg+wvS1un1hAOuIcxcBy0hzcUf6Jg2a1w65kpoOUnurOfZbERwjI1TfZxNjcww==
@@ -15373,6 +15349,15 @@ terser@^4.0.0, terser@^4.1.2:
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.1.4.tgz#4478b6a08bb096a61e793fea1a4434408bab936c"
   integrity sha512-+ZwXJvdSwbd60jG0Illav0F06GDJF0R4ydZ21Q3wGAFKoBGyJGo34F63vzJHgvYxc1ukOtIjvwEvl9MkjzM6Pg==
+  dependencies:
+    commander "^2.20.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.12"
+
+terser@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.3.0.tgz#0259070576ff34d89c5cd2b8d91055cdce0212d5"
+  integrity sha512-w5CzrvQOwYAH54aG22IrUJI4yX1w62XQmMdEOM6H4w0ii6rc3HJ89fmcOGN5mRwBWfUgaqO7RJTp4aoY/uE+qQ==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"

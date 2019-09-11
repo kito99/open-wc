@@ -1,0 +1,25 @@
+<html lang="en-GB"><head>
+  <title>My app</title>
+  <style>
+    my-app {
+      display: block;
+    }
+  </style>
+<link rel="preload" href="app.js" as="script"><link rel="preload" href="shared.js" as="script"></head>
+
+<body>
+  <h1>
+    <span>
+      Hello world!
+    </span>
+  </h1>
+  <my-app></my-app>
+
+
+
+<script>
+(function() {
+  var polyfills = [];
+['./app.js','./shared.js'].forEach(function (entry) { System.import(entry); });
+})();
+</script></body></html>
